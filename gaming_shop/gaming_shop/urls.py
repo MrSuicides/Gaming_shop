@@ -27,7 +27,6 @@ urlpatterns = [
     path('productaudio', include('catalog.urls')),
     path('productmice', include('catalog.urls')),
     path('productkeyboard', include('catalog.urls')),
-    path('test', include('catalog.urls')),
     path('catalog/', include('catalog.urls')),
     path('catalog/accounts/', include('django.contrib.auth.urls')),
 

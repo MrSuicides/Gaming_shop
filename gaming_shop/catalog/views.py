@@ -36,26 +36,16 @@ def dead(request):
     return render(request, 'Pages/Basket.html')
 
 def Products(request, product_name):
-    Length_check = [len(Audio.objects.filter(name=product_name)),
-                    len(Keyboard.objects.filter(name=product_name)),
-                    len(Mice.objects.filter(name=product_name))]
+    categories = {
+        Audio: 'Pages/ProductAudio.html',
+        Mice: 'Pages/ProductMice.html',
+        Keyboard: 'Pages/ProductKeyboard.html',
+    }
+    for category, template in categories.items():
+        product = category.objects.filter(name=product_name).first()
+        if product is not None:
+            return render(request, template, locals())
 
-    if max(Length_check) == len(Mice.objects.filter(name=product_name)):
-        product = Mice.objects.get(name=product_name)
-        a = "Mice"
-    elif max(Length_check) == len(Audio.objects.filter(name=product_name)):
-        product = Audio.objects.get(name=product_name)
-        a = "Audio"
-    else:
-        product = Keyboard.objects.get(name=product_name)
-        a = "Keyboard"
-    return render(request, 'Pages/Product'+a+'.html', locals())
-
-def test(request):
-    product = Audio.objects.filter(name="rare").first()
-    product = Audio.objects.filter(name="rare").first()
-    product = Audio.objects.filter(name="rare").first()
-    return product
 def register(request):
     if request.method == 'POST':
 
