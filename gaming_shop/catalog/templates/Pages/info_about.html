@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/info_about.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <title>Mouse</title>
+<body>
+
+<header class="header">
+
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">info.name</div>
+        </div>
+    </div>
+</header>
+
+<div class="content">
+    <div class="intro">
+        <img align="bottom" src="/media/images/keyboard_1.jpg" style="width:100%; height: 100%;" >
+        <div class="sad">
+            <a class="buy" href="#">
+                Подробнее
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="headers" id="myHeader">
+  <h2>My Header</h2>
+</div>
+<section>
+
+</section>
+
+<script>
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>
+

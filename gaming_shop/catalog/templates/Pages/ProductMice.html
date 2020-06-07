@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+	<header>
+		<div class="logo">
+
+
+				<img class="graphicLogo" src="/media/images/razer.png" alt="Logo">
+
+		</div>
+
+		<nav>
+			<div class="topnav" id="myTopnav">
+				<a id="alloy" href="/">MoGO</a>
+				<a href="http://127.0.0.1:8000/catalog/razer/audio">AUDIO</a>
+				<a href="http://127.0.0.1:8000/catalog/razer/keyboard">KEYBOARD</a>
+				<a href="http://127.0.0.1:8000/catalog/razer/mice">GAME MOUSE</a>
+				<a id="iconMenu" class="icon" href="#">&#9776</a>
+			</div>
+		</nav>
+	</header>
+
+
+	<div class="content">
+		<img src="/media/{{ product.image }}"  alt="">
+
+		<ul style=" padding:50px 0px;color: grey">
+			<h1 class="teg" >{{ product.name }}</h1>
+			<li>Удобная симметричная конструкция</li>
+			<li>Семь программируемых кнопок</li>
+			<li>Двухлетняя гарантия</li>
+			<li>Простая настройка с помощью ПО Razer NGenuity</li>
+			<li>Большие скользящие плоскости для плавного, контролируемого перемещения</li>
+			<li type="none" style="padding-top: 30px"><span style="font-size: 20px;color: #000;"><b>Где приобрести</b></span></li>
+			<table border="1" width="80" height="27" style="margin-top: 10px">
+				<tr>
+					<td><a href="https://www.razer.com/gaming-headsets-and-audio"><img src="/media/images/razerLogo.png" alt=""></a></td>
+				</tr>
+			</table>
+
+		</ul>
+	</div>
+	<hr align="center" width="50%" style="margin:0% 25%">
+	<div class="content">
+		<ul style=" padding:10px 100px;color: grey">
+			<li type="none" style="padding:30px 0px"><span style="font-size: 25px;color: #000;"><b>Преимущества</b></span></li>
+			<h1 class="teg" >Headphone</h1>
+			<li class="liAdv">{{ product.sensor }}</li>
+			<li class="liAdv">{{ product.resolution }}</li>
+			<li class="liAdv">{{ product.dpi }}</li>
+			<li class="liAdv">{{ product.speed }}</li>
+			<li class="liAdv">{{ product.sensitivity }}</li>
+
+		</ul>
+		<img src="img/key2.png" alt="">
+	</div>
+
+
+	<script>
+        iconMenu.onclick = function mFunc() {
+	var x = document.getElementById("myTopnav")
+
+	if(x.className === "topnav"){
+		x.className += " responsive";
+	}
+	else {
+		x.className = "topnav";
+	}
+}
+    </script>
+</body>
+</html>
+

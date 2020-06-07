@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <title>Mogo</title>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo" id="section1">MoGo</div>
+
+            <nav class="nav">
+                {% if user.is_authenticated %}
+                <h2 class="your_name" >{{ user.username }}</h2>
+                {% endif %}
+                <a class="nav__link active" href="dead">About</a>
+                <a class="nav__link" href="product">Service</a>
+                <a class="nav__link" href="#">Blog</a>
+                <a class="nav__link" href="accounts/login">Login</a>
+                <a class="nav__link" href="register">register</a>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="intro">
+    <div class="container">
+        <div class="intro__inner">
+            <h2 class="intro__suptitle">Your Advertising</h2>
+            <h1 class="intro__title">Welcome to MoGo</h1>
+
+            <a class="btn" href="#">Learn More</a>
+        </div>
+
+        <div style="font-family: 'Kaushan Script'" class="slider">
+            <div class="slider__item">
+                <a class="decoration__item" href="#section1"><span class="slider__num">01</span> Intro</a>
+            </div>
+            <div class="slider__item">
+                <a class="decoration__item__Razer" href="#section2"><span class="slider__num" >02</span> R A Z E R</a>
+            </div>
+            <div class="slider__item">
+                <a class="decoration__item__HyperX" href="#"><span class="slider__num" >03</span> HyperX</a>
+            </div>
+            <div class="slider__item">
+                <a class="decoration__item" href="/"><span class="slider__num" >04</span> Contacts</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+
+        <div class="section__header">
+            <h3 class="section__suptitle" id="section2">R A Z E R</h3>
+            <h2 class="section__title"></h2>
+            <div class="section__text">
+                <p>Здесь Вы найдете новую продукцию Razer, анонсированную за последние полгода, которая только недавно поступила в продажу в Украине или будет скоро доступна к покупке в ближайшее время</p>
+            </div>
+        </div>
+
+        <div class="about">
+            <div class="about__item">
+                <div class="about__img">
+                    <a href="razer/keyboard">
+                        <img  src="{%static 'images/IntroKeyboard.jpg'%}" alt=" " style="
+                                                    width: 380px;
+                                                    height: 250px;">
+                    </a>
+                </div>
+                <div class="about__text">Keyboard</div>
+            </div>
+            <div class="about__item__second">
+                <div class="about__img__second">
+                    <a href="razer/mice">
+                        <img src="{% static 'images/IntroMouse.jpg' %}" alt=" " style="
+                                                    width: 380px;
+                                                    height: 250px;">
+                    </a>
+                </div>
+                <div class="about__text">Mouse</div>
+            </div>
+            <div class="about__item__third">
+                <div class="about__img__third">
+                    <a href="razer/audio">
+                        <img src="{% static 'images/IntroHeadset.jpg' %}" alt=" " style="
+                                                    width: 380px;
+                                                    height: 250px;">
+                    </a>
+                </div>
+                <div class="about__text">Headset</div>
+            </div>
+        </div>
+    </div>
+</section>

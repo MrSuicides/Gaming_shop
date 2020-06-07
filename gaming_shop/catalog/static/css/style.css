@@ -1,0 +1,119 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	padding-bottom: 8px;
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+}
+
+.logo{
+	background: #000;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.graphicLogo{
+	padding: 5px;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.menu{
+	max-width: 100%;
+	box-sizing: border-box;
+	margin: 50px 40px;
+	color:white;
+}
+
+a.menu:hover{
+	border-bottom: 2px solid #fff;
+}
+
+
+nav{
+	width:100%;
+	background-color: rgb(239,239,239);
+}
+
+.topnav{
+	font-size: 14px;
+	padding: 10px 0px;
+}
+
+.topnav a {
+	color:#000;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 13px;
+}
+
+.topnav .icon{
+	display: none;
+}
+
+#alloy{
+	font-size: 18px;
+}
+
+@media screen and (max-width: 768px){
+	.topnav a:not(:first-child){
+		display: none;
+	}
+	.topnav a.icon{
+		float:right;
+		margin-top: -15px;
+		display: block;
+		color:black;
+	}
+	nav{
+		width: 100%;
+		height: 100%;
+	}
+	.topnav.responsive{
+		position: relative;
+	}
+	.topnav.responsive a.icon{
+		position: absolute;
+		right: 0;
+		top:0;
+	}
+	.topnav.responsive a{
+		float:none;
+		display: block;
+		text-align: left;
+	}
+}
+
+
+.content{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+div.content img{
+	padding:30px 60px;
+	width: 400px;
+}
+div.content a img{
+	width: 80px;
+	padding: 5px;
+}
+.teg {
+	font-size: 20px;
+	padding-bottom:20px;
+	color: #000000;
+}
+.liAdv{
+	padding-bottom:20px;
+}

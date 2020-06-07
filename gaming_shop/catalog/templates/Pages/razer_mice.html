@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://kit.fontawesome.com/b8991598b2.js"></script>
+    <link rel="stylesheet" href="{% static 'css/Mouse.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <title>Mouse</title>
+</head>
+<body>
+
+<header class="header" id="myHeader">
+
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logos">MoGo</div>
+
+            <form class="search-box" method="get">
+                <input class="search-txt" type="text" name="name"
+                       placeholder="Type to search">
+                <button class="search-btn">
+                    <span class="fas fa-search"></span>
+                </button>
+            </form>
+
+            <nav class="nav">
+                <a class="nav__link active" href="/">Home</a>
+                <a class="nav__link" href="#">About</a>
+                <a class="nav__link" href="#">Service</a>
+                <a class="nav__link" href="#">Team</a>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="content">
+ {% for info in all_info %}
+    <div class="intro">
+
+        <img align="bottom" src="/media/{{ info.image }}" style="width:100%; height: 100%;" >
+        <div class="sad">
+            <div class="header__logo">{{ info.name }}</div>
+            <a class="buy" href="{% url 'productmice' info.name %}">
+                Подробнее
+            </a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+<script>
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+</html>
+
